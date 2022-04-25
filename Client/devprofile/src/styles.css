@@ -1,0 +1,134 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #developerImg {
+    height: 15em;
+    width: 15em;
+    margin-top: 50px;
+  }
+  #headtitle {
+    margin: 50px;
+    font-size: 2em;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: "semi-bold";
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+  }
+  .head {
+    height: 20em;
+    background-color: #2f2e41;
+  }
+  .subhead {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 140%;
+    margin-left: 5%;
+    font-family: "Nunito Sans", sans-serif;
+    color: #3f3d56;
+  }
+  
+  hr {
+    width: 100%;
+  }
+  
+  #searchtext {
+    height: 30px;
+    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    border-radius: 5px;
+    margin-left: 2%;
+    font-size: 15px;
+    border: 0;
+  }
+  #searchicon {
+    margin-top: 4px;
+  }
+  
+  #searchbutton {
+    height: 80%;
+    width: 20%;
+    margin-top: 4px;
+    border: 0;
+    padding-left: 2px;
+    background-color: #d0cde1;
+  }
+  
+  .search {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 100px;
+    height: 2.5rem;
+    width: 35%;
+    margin-left: 35%;
+    background-color: #d0cde1;
+    border-radius: 5px;
+    border: 0;
+  }
+  
+  #searchbutton :hover {
+    background-color: #8f8d99;
+    border-radius: 2px;
+  }
+  
+  p {
+    text-align: center;
+    color: #3f3d56;
+    font-size: 120%;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  
+  #addDev {
+    margin-left: 38%;
+    border: 0;
+    height: 2.5em;
+    width: 25%;
+    background-color: #7c639f;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  input[type="text" i] {
+    padding: 0 !important;
+  }
+  
+  footer {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #3f3d56;
+    margin-bottom: -8%;
+    bottom: 0;
+  }
+  
+  footer p {
+    color: white;
+  }
+  
+  .devAddform input {
+    width: 100%;
+  }
+  .devAddform img {
+    height: 1em;
+  }
+  .developers{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      font-family: "Nunito Sans", sans-serif;
+      width: 35%;
+      margin-left : 35%;
+      margin-right: 35%;
+  }
+
+  .developer{
+      display: block;
+  }
