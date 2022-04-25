@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+
+require('dotenv').config();
+app.set('view engine','ejs');
+
+const port = process.env.PORT || 3001;
 const fetch = require("node-fetch");
 
 app.use(express.json());   // Important for sending data in json format
 
 var developers = {
-
     gcnit : {
         "id": "gcnit",
         "avatar_url": "https://avatars.githubusercontent.com/u/4833751?v=4",

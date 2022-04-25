@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import giticon from './Images/iconfinder_github_317712.png';
 import linkedicon from './Images/iconfinder_2018_social_media_popular_app_logo_linkedin_3225190.png';
 import codecheficon from './Images/codechef-1324440139527402917_32.png';
@@ -8,8 +8,10 @@ import mediumicon from './Images/iconfinder_Circled_Medium_svg5_5279113.png';
 import {useNavigate} from 'react-router-dom';
 
 function GetGithubData(githubId){
+
     
-    const data = fetch(`http://localhost:3000/api/developers/${githubId}`).then((response) => {console.log(response)});
+    useEffect( () => {fetch(`/api/developers/${githubId}`).
+    then((response) => {console.log(response)})});
 
 }
 
