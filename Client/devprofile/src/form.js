@@ -9,10 +9,9 @@ import {useNavigate} from 'react-router-dom';
 
 function GetGithubData(githubId){
 
-    
-    useEffect( () => {fetch(`/api/developers/${githubId}`).
-    then((response) => {console.log(response)})});
-
+    //console.log(githubId);
+    fetch(`/api/developers/${githubId}`).
+    then((response) => {console.log(response)})
 }
 
 function Form() {
