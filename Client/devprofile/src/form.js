@@ -9,15 +9,31 @@ import {useNavigate} from 'react-router-dom';
 import Developers from './developers';
 
 
+function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,mediumId){
+
+    var data = {
+      "github_id": githubId,
+      "linkedin_id": linkedinId,
+      "codechef_id": codechefId,
+      "hackerrank_id": hackerrankId,
+      "twitter_id": twiterId,
+      "medium_id": mediumId
+    }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+  };
+      
+      var response  = fetch(`/api/create/developer/`, requestOptions).
+      then((response) => {return response.json()}).then((data) => {console.log(data)});
+  }
+
+
 function Form() {
 
-  function GetGithubData(githubId){
-
-    console.log(githubId);
-    <Developers id={githubId} />
-    // var data  = fetch(`/api/developers/${githubId}`).
-    // then((response) => {return response.json()}).then((data) => {console.log(data)});
-}
+  
 
     const [githubId, setGitId] = useState("");
     const [linkedinId, setLinkedinId] =useState("");
@@ -27,6 +43,7 @@ function Form() {
     var [mediumId, setMediumId] = useState("");
     
     const navigate = useNavigate();
+
 
 
 return (
@@ -40,7 +57,7 @@ return (
         <img src={linkedicon} alt='linkedin' id='linkedicon'  />
         Linkedin
       </label >
-      <input type='text' id='linkedin' value={linkedinId} onChange = {(event) => console.log(githubId)} />
+      <input type='text' id='linkedin' value={linkedinId} onChange = {(event) => setLinkedinId(event.target.value)} />
       <label >
         <img src={codecheficon} alt='codechef' id='codecheficon' />
         Codechef
@@ -61,7 +78,7 @@ return (
         Medium
       </label>
       <input type='text' id='mediumin' value={mediumId} onChange = {(event) => setMediumId(event.target.value) }/>
-      <button id={'devformsubmit'} onClick= {() => GetGithubData(githubId)} >Submit </button>
+      <button id={'devformsubmit'} onClick= {() => GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,mediumId)} >Submit </button>
       <button id={'devformcancel'} > Cancel </button>
     </div>
   );

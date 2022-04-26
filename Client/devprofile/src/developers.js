@@ -1,15 +1,16 @@
-import React from "react";
+
+import React, { useState } from "react";
 
 
 var ids = [];
 function Developers(props){
 
-    
-    var id = props.id;
+
+    fetch('/api/list/developers/').then((response) => {return response.json()});
     ids.push(id);
-    const element = ids.map((id) => 
-        <div className="developer"> {id}</div>
-    );
+    // const element = data.map((developer) => 
+    //     <div className="developer"> {developer["id"]}</div>
+    // );
 
 
 
@@ -17,7 +18,7 @@ function Developers(props){
     return (
         <React.Fragment>
             <div className="developers">
-                {element}
+                <h1>hello</h1>
             </div>
             
         </React.Fragment>

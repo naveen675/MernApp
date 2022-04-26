@@ -67,13 +67,24 @@ var repo = {
 
 
 
-app.get('/api/developers', (req, res) => {
+app.get('/api/list/developers', (req, res) => {
 
-    res.send(developers);
+    var response = [];
+    var developer = {};
+
+    for(var i=0;i<developers.length;i++){
+
+        developer["id"] = developers[i]["id"];
+        developer["avatar_url"] = developers[i]["avatar_url"];
+        response.push(developer);
+
+    }
+
+    res.send(response);
         
 });
 
-app.post('/api/developers', (req,res) => {
+app.post('/api/create/developer', (req,res) => {
 
     var data = req.body;
     var git_id = data["github_id"];
