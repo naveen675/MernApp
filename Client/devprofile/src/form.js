@@ -11,7 +11,7 @@ function GetGithubData(githubId){
 
     //console.log(githubId);
     fetch(`/api/developers/${githubId}`).
-    then((response) => {console.log(response)})
+    then((response) => {return response.json()}).then((data) => {console.log(data)});
 }
 
 function Form() {
