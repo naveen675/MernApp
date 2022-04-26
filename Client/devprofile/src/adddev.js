@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Form from './form';
 
 import {useNavigate} from 'react-router-dom';
 
-function AddDev() {
 
+
+function form(){
+  return (
+        <Form/>
+  )
+}
+
+function AddDev() {
+    const [displayForm,setDisplayForm] = useState(0);
     const navigate  = useNavigate();
   return (
     <React.Fragment>
-      <button id="addDev" onClick={() => navigate("/form")}>
+      <button id="addDev" onClick={() => {setDisplayForm(1)}}>
         Add developer Info
       </button>
+      {displayForm>0 && <Form />}
     </React.Fragment>
   );
 }

@@ -1,9 +1,12 @@
 import React from "react";
 
 
+var ids = [];
 function Developers(props){
 
-    var ids = props.ids;
+    
+    var id = props.id;
+    ids.push(id);
     const element = ids.map((id) => 
         <div className="developer"> {id}</div>
     );

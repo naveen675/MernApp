@@ -26,7 +26,7 @@ const app= (<React.Fragment>
       </div>
       <hr />
       <Search type="text" id="searchtext" placeholder="Search for username" />
-      <Developers ids={ids} />
+      <Developers/>
       <hr />
       <p>Could not find what you are looking for ?</p>
       {/* <AddDev /> */}

@@ -6,15 +6,18 @@ import hackericon from './Images/iconfinder_160_Hackerrank_logo_logos_4373234.pn
 import twitericon from './Images/iconfinder_2018_social_media_popular_app_logo_twitter_3225183.png';
 import mediumicon from './Images/iconfinder_Circled_Medium_svg5_5279113.png';
 import {useNavigate} from 'react-router-dom';
+import Developers from './developers';
 
-function GetGithubData(githubId){
-
-    //console.log(githubId);
-    fetch(`/api/developers/${githubId}`).
-    then((response) => {return response.json()}).then((data) => {console.log(data)});
-}
 
 function Form() {
+
+  function GetGithubData(githubId){
+
+    console.log(githubId);
+    <Developers id={githubId} />
+    // var data  = fetch(`/api/developers/${githubId}`).
+    // then((response) => {return response.json()}).then((data) => {console.log(data)});
+}
 
     const [githubId, setGitId] = useState("");
     const [linkedinId, setLinkedinId] =useState("");
@@ -22,7 +25,7 @@ function Form() {
     const [hackerrankId, setHackerrankId] = useState("");
     var [twiterId, setTwiterId] = useState("");
     var [mediumId, setMediumId] = useState("");
-
+    
     const navigate = useNavigate();
 
 
