@@ -6,8 +6,9 @@ var ids = [];
 function Developers(props){
 
 
-    fetch('/api/list/developers/').then((response) => {return response.json()});
-    ids.push(id);
+    var data = fetch('/api/list/developers/').then((response) => {return response.json()}).then((data) => {return data});
+    console.log(data["Prototype"]);
+    // ids.push(id);
     // const element = data.map((developer) => 
     //     <div className="developer"> {developer["id"]}</div>
     // );

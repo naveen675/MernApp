@@ -7,10 +7,14 @@ import twitericon from './Images/iconfinder_2018_social_media_popular_app_logo_t
 import mediumicon from './Images/iconfinder_Circled_Medium_svg5_5279113.png';
 import {useNavigate} from 'react-router-dom';
 import Developers from './developers';
+import {formVisibility} from './adddev';
 
 
 function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,mediumId){
 
+  
+  
+    const navigate = useNavigate();
     var data = {
       "github_id": githubId,
       "linkedin_id": linkedinId,
@@ -31,6 +35,7 @@ function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,medi
   }
 
 
+
 function Form() {
 
   
@@ -42,7 +47,7 @@ function Form() {
     var [twiterId, setTwiterId] = useState("");
     var [mediumId, setMediumId] = useState("");
     
-    const navigate = useNavigate();
+    
 
 
 
@@ -87,45 +92,3 @@ return (
 }
 
 export default Form;
-
-
-
-// return (
-//     <div className="devAddform">
-//       <label>
-//         <Image src={giticon} alt={'github'} id={'giticon'} />
-//         Github
-//       </label>
-//       <Input type={'text'} id={'gitin'} value={githubId} onChange = {(event) => setGitId(event.target.value)} />
-//       <label>
-//         <Image src={linkedicon} alt={'linkedin'} id={'linkedicon'}  />
-//         Linkedin
-//       </label>
-//       <Input type={'text'} id={'linkedin'} />
-//       <label>
-//         <Image src={codecheficon} alt={'codechef'} id={'codecheficon'} />
-//         Codechef
-//       </label>
-//       <Input type={'text'} id={'codechefin'} />
-//       <label>
-//         <Image src={hackericon} alt={'hackerrank'} id={'hackericon'} />
-//         HackerRank
-//       </label>
-//       <Input type={'text'} id={'hackerin'} />
-//       <label>
-//         <Image src={twitericon} alt={'twitter'} id={'twitericon'} />
-//         Twitter
-//       </label>
-//       <Input type={'text'} id={'twiterin'} />
-//       <label>
-//         <Image src={mediumicon} alt={'medium'} id={'mediumicon'} />
-//         Medium
-//       </label>
-//       <Input type={'text'} id={'mediumin'} />
-//       <button id={'devformsubmit'} onClick= {() => console.log(githubId)}  >Submit </button>
-//       <button id={'devformcancel'} > Cancel </button>
-//     </div>
-//   );
-
-//((response) => {return response.json()})).then(
-    //(data) => (console.log(data))

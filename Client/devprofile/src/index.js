@@ -11,6 +11,7 @@ import './styles.css';
 import Adddev from "./adddev"
 import Form from "./form";
 import Developers from "./developers";
+import DevInfo from "./devInfo";
 
 var ids = ['naveen675', 'facebook',"sai"];
 
@@ -31,7 +32,7 @@ const app= (<React.Fragment>
       <p>Could not find what you are looking for ?</p>
       {/* <AddDev /> */}
     </div>
-    <Adddev />
+    <Adddev formVisibility={0} />
     <Footer />
   </div>
   </React.Fragment>
@@ -43,7 +44,7 @@ ReactDOM.createRoot(document.getElementById('root') ).render(
     <Route exact path="/" element={app} />
       <Route exact path="/adddev" element={<Adddev />} />
       <Route exact path="/form" element={<Form />} />
-      
+      <Route exact path="/devInfo" element={<DevInfo />} />
       <Route path="/app" element={<App />} />
     </Routes>
   </BrowserRouter>

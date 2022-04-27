@@ -11,9 +11,11 @@ function form(){
   )
 }
 
-function AddDev() {
-    const [displayForm,setDisplayForm] = useState(0);
-    const navigate  = useNavigate();
+function AddDev(props) {
+
+  
+  const [displayForm,setDisplayForm] = useState(0);
+  const navigate  = useNavigate();
   return (
     <React.Fragment>
       <button id="addDev" onClick={() => {setDisplayForm(1)}}>
