@@ -14,7 +14,7 @@ function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,medi
 
   
   
-    const navigate = useNavigate();
+    
     var data = {
       "github_id": githubId,
       "linkedin_id": linkedinId,
@@ -31,7 +31,7 @@ function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,medi
   };
       
       var response  = fetch(`/api/create/developer/`, requestOptions).
-      then((response) => {return response.json()}).then((data) => {console.log(data)});
+      then((response) => {return response.json()});
   }
 
 

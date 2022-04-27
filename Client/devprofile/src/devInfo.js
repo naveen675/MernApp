@@ -10,7 +10,7 @@ import MailIcon from './Images/email-24px.svg';
 import LocationIcon from './Images/Icons _ Illustrations/location_on-24px.svg';
 import BusinessIcon from './Images/Icons _ Illustrations/business-24px.svg';
 import BlogIcon from './Images/Icons _ Illustrations/insert_link-24px (1).svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -51,15 +51,17 @@ function DevInfo(props){
         
     });
     
-    const displayRepos = repos.map((repo)=> {
-        <p>{repo}</p>
-    })
+    // const displayRepos = repos.map((repo)=> {
+    //     <p>{repo}</p>
+    // })
+
+    const navigate = useNavigate();
 
     return (
        <React.Fragment>
         <div className='devloperProfileHeader'>
             <h3>The Developer Profile</h3>
-            <h3>All Developers</h3>
+            <button onClick={() => (navigate('/'))}>All Developers</button>
         </div>
         <div className='developerProfileContent'>
             <div className='developerProfileSubContent'>
@@ -79,7 +81,7 @@ function DevInfo(props){
             </div>
             <hr></hr>
             <div>
-                {displayRepos}
+               <h1>Repos</h1>
             </div>
         </div>
 
