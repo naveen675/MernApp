@@ -13,7 +13,7 @@ function Developers(props){
     //     <div className="developer"> {developer["id"]}</div>
     // );
 
-    export function Update(){
+    function Update(){
         setTest("welcome");
     }
 
