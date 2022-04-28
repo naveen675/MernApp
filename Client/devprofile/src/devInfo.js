@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AccountCircle from './Images/Icons _ Illustrations/account_circle-24px.svg';
 import githubIcon from './Images/iconfinder_github_317712.png';
 import linkedicon from './Images/iconfinder_2018_social_media_popular_app_logo_linkedin_3225190.png';
@@ -16,7 +16,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function DevInfo(props){
+function DevInfo(){
+
+    const navigate = useNavigate();
 
     const [githubId,setGithubId] = useState("gcnit");
     const [avatar, setAvatar] = useState();
@@ -32,30 +34,55 @@ function DevInfo(props){
     const [repos, setRepos] = useState();
     const [name, setName] = useState();
     const[company,setCompany] = useState();
+    const [Data,setData] = useState();
+    console.log(typeof(repos));
 
-    const d = fetch(`/api/developers/${githubId}`).then((response) => {return response.json()}).then((data) => {
-        setAvatar(data['avatar_url']);
-        setHackerRank(data['hackerrank_id']);
-        setCodechef(data['codechef_id']);
-        setLinkedIn(data['linkedin_id']);
-        setMedium(data['medium_id']);
-        setTwitter(data['twitter_id']);
-        setRepos(data['repos']);
-        setName(data['name']);
-        setBio(data['bio'])
-        setLocation(data['location']);
-        setCompany(data['company']);
-        setBlog(data['blog']);
-        setEmail(data['email']);
-        setRepos(data['repos']);
-        
-    });
     
-    // const displayRepos = repos.map((repo)=> {
-    //     <p>{repo}</p>
+
+    // // useEffect(() => {
+    // //     fetch(`/api/developers/${githubId}`).then((response) => {return response.json()}).then((data) => 
+    // //         {
+    // //             setAvatar(data['avatar_url'])
+    // //             setHackerRank(data['hackerrank_id'])
+    // //             setLinkedIn(data['linkedin_id'])
+    // //             setCodechef(data['codechef_id'])
+    // //             setMedium(data['medium_id']);
+    // //             setTwitter(data['twitter_id'])
+    // //             setEmail(data['email'])
+    // //             setBio(data['bio'])
+    // //             setBlog(data['blog'])
+    // //             setLocation(data['location'])
+    // //             setName(data['name'])
+    // //             setRepos(data['repos']);
+    // //             setCompany(data['company'])
+    // //             setData(data);
+
+    // //         }
+    // //     );
+
+        
     // })
 
-    const navigate = useNavigate();
+    function DisplayRepos(){
+
+        console.log('*****************');
+
+        const s = repos.map((item) => {
+            <h1>h1</h1>
+        })
+
+        return s;
+    }
+
+    console.log(avatar);
+    console.log(hackerrank);
+    console.log(linkedin);
+    console.log(twiter);
+    console.log(medium);
+    console.log(codechef);
+    console.log(repos);
+    console.log(Data);
+
 
     return (
        <React.Fragment>
@@ -81,7 +108,9 @@ function DevInfo(props){
             </div>
             <hr></hr>
             <div>
-               <h1>Repos</h1>
+               <h1>Github Repositories</h1>
+               <DisplayRepos />
+
             </div>
         </div>
 

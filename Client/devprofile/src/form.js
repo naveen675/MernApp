@@ -8,12 +8,13 @@ import mediumicon from './Images/iconfinder_Circled_Medium_svg5_5279113.png';
 import {useNavigate} from 'react-router-dom';
 import Developers from './developers';
 import {formVisibility} from './adddev';
+import {Update} from './developers';
 
 
 function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,mediumId){
 
   
-  
+
     
     var data = {
       "github_id": githubId,
@@ -29,9 +30,18 @@ function GetGithubData(githubId,linkedinId,codechefId,hackerrankId,twiterId,medi
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
   };
+
+  function AddDeveloperData(){
+
+    fetch(`/api/create/developer/`, requestOptions).
+      then((response) => {return response.json()}).then((data) => {console.log(data)});
+
+  }
+
+  AddDeveloperData();
+  Update();
       
-      var response  = fetch(`/api/create/developer/`, requestOptions).
-      then((response) => {return response.json()});
+      
   }
 
 

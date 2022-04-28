@@ -159,6 +159,7 @@ app.get("/api/developers/:id", (req,res) => {
     for(var i=0; i<developers.length;i++){
         if(developers[i]["id"] == String(req.params.id)){
             developer = developers[i];
+            break;
         }
     }
     res.send(developer);
